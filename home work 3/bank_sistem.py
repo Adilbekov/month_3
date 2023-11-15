@@ -1,7 +1,7 @@
 # Здесь мы все импортируем
 from aiogram import Bot, Dispatcher, types, executor
 from logging import basicConfig, INFO
-# from bot_token import token_3
+# from config import token_3
 token_3 = "6407838890:AAEzapSdEMaREqWalJf4LWApcC0qoHpH17M"
 import sqlite3
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
