@@ -36,16 +36,12 @@ async def start(message: types.Message):
     await message.answer("Здравствуйте! Я бот, который обменяет ваши деньги. Введите кол-во денег")
     await Money.money.set()
 
-@dp.message_handler(commands="currency")
-async def currency(message: types.Message):
-    await message.answer("Теперь выберите валюту для обмена", reply_markup=currency_buttons)
 
 @dp.message_handler(state=Money.money)
 async def money(message: types.Message, state: FSMContext):
     await state.update_data(money=message.text)
     await message.answer("Значение сохранено. Выберите валюту для обмена.", reply_markup=currency_buttons)
     await Money.next()
-
 
 @dp.message_handler(commands="usd", state=Money.money)
 async def usd(message: types.Message, state: FSMContext):
@@ -146,7 +142,7 @@ async def kzt(message: types.Message, state: FSMContext):
         try:
             money = float(money)
             result = money * kzt
-            await message.answer(f"Ваш результат: {result}")
+            await message.answer(f"Ва результат: {result}")
         except ValueError:
             await message.answer("Введено некорректное значение денег")
     else:
