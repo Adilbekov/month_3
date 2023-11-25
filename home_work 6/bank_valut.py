@@ -41,7 +41,7 @@ async def start(message: types.Message):
 async def money(message: types.Message, state: FSMContext):
     await state.update_data(money=message.text)
     await message.answer("Значение сохранено. Выберите валюту для обмена.", reply_markup=currency_buttons)
-    await Money.next()
+    await Money.next()  
 
 @dp.message_handler(commands="usd", state=Money.money)
 async def usd(message: types.Message, state: FSMContext):
