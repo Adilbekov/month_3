@@ -17,19 +17,19 @@ def parsing_acipress():
     with open('news', 'a+', encoding='UTF_8') as news_acipress:
         news_acipress.write(f'{n}) {news_acipress}\n')
 
-# parsing_acipress()
+parsing_acipress()
 
 
-def parsing_sulpak():
-    n = 0
-    for page in range(1, 7):
-        url = f'https://www.sulpak.kg/f/noutbuki?page={page}'
-        response = requests.get(url=url)
-        soup = BeautifulSoup(response.text, 'lxml')
-        all_laptops = soup.find_all('div', class_='product__item-name')
-        all_prices = soup.find_all('div', class_='product__item-price')
+# def parsing_sulpak():
+#     n = 0
+#     for page in range(1, 7):
+#         url = f'https://www.sulpak.kg/f/noutbuki?page={page}'
+#         response = requests.get(url=url)
+#         soup = BeautifulSoup(response.text, 'lxml')
+#         all_laptops = soup.find_all('div', class_='product__item-name')
+#         all_prices = soup.find_all('div', class_='product__item-price')
     
-        for laptop, price in zip(all_laptops, all_prices):
-            n += 1
-            print(n, laptop.text, "".join(price.text.split()))
-parsing_sulpak()
+#         for laptop, price in zip(all_laptops, all_prices):
+#             n += 1
+#             print(n, laptop.text, "".join(price.text.split()))
+# parsing_sulpak()

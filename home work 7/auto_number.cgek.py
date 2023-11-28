@@ -84,7 +84,7 @@ async def all_number_car(message: types.Message):
     result = cursor.fetchall()
     await message.answer('Вот все свежие номера:')
     for car_num in result:
-        await message.answer({car_num[0]})
+        await message.answer(f'{car_num[0]}')
     await message.answer('алтыным стоимость всех номеров состовляет: 110млн$')
 
 

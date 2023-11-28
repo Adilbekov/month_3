@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 async def start(message:types.Message):
     await message.answer(f"Hello {message.from_user.full_name} /laptops")
 
-@dp.message_handler(commands='laptops')
+@dp.message_handler(commands='laptops') 
 async def send_laptops(message:types.Message):
     await message.answer("Отправляю ноутбуки в наличии...")
     n = 0
